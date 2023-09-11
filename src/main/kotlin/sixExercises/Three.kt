@@ -1,9 +1,13 @@
 package sixExercises
 
+import utils.InputLoop
 import java.util.Scanner
 
 fun main() {
-    println(toDoubleSystem(Scanner(System.`in`).nextInt()))
+    InputLoop.start(error = "Пожалуйста введите число!") {
+        print("Введите десятичное число: ")
+        println(toDoubleSystem(Scanner(System.`in`).nextInt()))
+    }
 }
 
 private fun toDoubleSystem(n: Int): Int {

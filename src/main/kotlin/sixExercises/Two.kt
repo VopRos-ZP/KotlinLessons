@@ -3,12 +3,5 @@ package sixExercises
 import java.util.*
 
 fun main() {
-    getCount(Scanner(System.`in`).nextLine()).print()
+    Scanner(System.`in`).nextLine().groupingBy { it }.eachCount().toSortedMap().forEach { (c, i) -> println("$c - $i") }
 }
-
-private fun getCount(input: String): Map<Char, Int> {
-    return input.groupingBy { it }.eachCount().toSortedMap()
-}
-
-private fun Map<Char, Int>.print() = forEach { (c, i) -> println("$c - $i") }
-

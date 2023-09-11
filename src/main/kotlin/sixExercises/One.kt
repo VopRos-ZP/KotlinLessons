@@ -1,13 +1,16 @@
 package sixExercises
 
+import utils.InputLoop
 import java.util.Scanner
 
 fun main() {
-    println(parseLine(Scanner(System.`in`).nextLine()))
+    InputLoop.start(error = "Неверный ввод!") {
+        print("Введите строку: ")
+        println(parseLine(Scanner(System.`in`).nextLine()))
+    }
 }
 
 private fun parseLine(input: String): String {
-    input.toCharArray()
     val all = mutableListOf(Pair(input.first(), 0))
     for (char in input) {
         val current = all.last()
